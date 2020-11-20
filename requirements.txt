@@ -1,0 +1,9 @@
+dj-database-url==0.4.1
+Django
+gunicorn
+psycopg2
+whitenoise
+djangorestframework
+numpy
+pandas
+django-cors-headers

@@ -1,0 +1,27 @@
+.header {
+  box-shadow: 0 4px 8px 0 rgba(18, 18, 18, 0.5);
+  background-image: linear-gradient(90deg, #19398a 12%, #1b4c92 50%, #19398a 89%);
+  color: #fff;
+  width: 100%;
+  height: 4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    background-image: url(https://www.cricnews24.com/storage/images/original/709cc7bed9a239630150a8a5d50edcbe.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 4rem;
+    width: 6rem;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+  }
+
+  .header-right {
+    font-size: 32px;
+    font-style: oblique;
+    margin-right: 1.5rem;
+    font-family: cursive;
+  }
+}

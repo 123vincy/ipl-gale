@@ -1,0 +1,77 @@
+<div class="outerContainer">
+  <div class="row">
+    <div class="seasons col-2">
+      <div class="header">Seasons</div>
+      <div [class.selected]="ses==selectedSeason" class="seasonsLi" *ngFor="let ses of seasons"
+        (click)="selectedSeason = ses;getStatistics();getChartData();">
+        {{ses}}
+      </div>
+    </div>
+    <div class="statistics col-10">
+
+      <div class="chartsOuterDiv">
+        <div class="chartsInner">
+          <ngx-spinner [name]="'spinner_ccr'" bdColor="rgba(51,51,51,0.2)" [fullScreen]="false" type="ball-atom"
+            size="medium">
+          </ngx-spinner>
+          <div class='header'>
+            Top Run scorers
+          </div>
+          <div id="columnChart_runs">
+          </div>
+        </div>
+        <div class="chartsInner">
+          <ngx-spinner [name]="'spinner_bcw'" bdColor="rgba(51,51,51,0.2)" [fullScreen]="false" type="ball-atom"
+            size="medium">
+          </ngx-spinner>
+          <div class='header'>
+            Most Wicket takers
+          </div>
+          <div id="barChart_wickets">
+          </div>
+        </div>
+      </div>
+      <div class="chartsInner">
+        <ngx-spinner [name]="'spinner_pcw'" bdColor="rgba(51,51,51,0.2)" [fullScreen]="false" type="ball-atom"
+          size="medium">
+        </ngx-spinner>
+        <div class='header'>
+          Most Matches won by each team
+        </div>
+        <div id="pieChart_wins">
+        </div>
+      </div>
+
+      <div style="position: relative;">
+        <ngx-spinner [name]="'spinner_stat'" bdColor="rgba(51,51,51,0.2)" [fullScreen]="false" type="ball-atom"
+          size="medium">
+        </ngx-spinner>
+
+        <ng-container *ngFor="let stat of statistics | keyvalue : unsorted">
+          <div class="header">
+            {{stat.key}}
+          </div>
+          <div class="content">
+
+            <span *ngIf="stat.key!='Top 4 teams' && stat.key!='Player who took most number of catches in a match'">
+              {{stat.value}} {{stat.key=='% of teams choosing to bat after winning the toss'?'%':''}}
+            </span>
+            <span *ngIf="stat.key=='Top 4 teams'">
+              <div *ngFor="let team of stat.value">
+                {{team}}
+              </div>
+            </span>
+            <span *ngIf="stat.key=='Player who took most number of catches in a match'">
+              <div> Player: {{stat.value['player']}}</div>
+              <div> Catches: {{stat.value['catches']}}</div>
+            </span>
+          </div>
+
+        </ng-container>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
