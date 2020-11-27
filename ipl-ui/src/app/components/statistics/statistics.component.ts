@@ -183,13 +183,16 @@ export class StatisticsComponent implements OnInit {
           'Top 4 teams': data['top_4'],
           'Team winning maximum number of the matches': data['won_max_mat'],
           'Most number of Man of the Matches award': data['max_mom'],
-          'Team won with the highest margins': data['highest_margin_run'],
+          'Team won with the highest margins of runs':
+            data['highest_margin_run'],
+          'Team won with the highest margins of wickets':
+            data['highest_margin_wickets'],
           'Player who took most number of catches in a match':
             data['most_catches'],
           'Team winning most number of tosses': data['most_tosses_won'],
           '% of teams choosing to bat after winning the toss':
             data['per_won_toss'],
-          'Teams winning both toss and match': data['won_toss_match'],
+          'Times a team winning both toss and match': data['won_toss_match'],
           'Venue hosting most number of matches': data['max_hosted_venue'],
           'Venue hosting most number of matches for the top team':
             data['max_hosted_venue_top_team'],
