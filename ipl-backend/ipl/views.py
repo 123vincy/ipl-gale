@@ -15,20 +15,11 @@ from django.db.models import Max, Count, Value, Q, Sum
 data_path = os.path.join(os.path.dirname(__file__), 'data/')
 
 # ideally this should be a part of the pipeline
-# Matches.objects.all().delete()
-# Matches.objects.from_csv(data_path+'matches.csv')
-# Deliveries.objects.all().delete()
-# Deliveries.objects.from_csv(data_path+'deliveries.csv')
-# batsman = df_del[['batsman', 'batsman_runs']]
-# batsman = batsman.groupby(
-#     'batsman')['batsman_runs'].sum().reset_index()
-# batsman = batsman.sort_values(
-#     by='batsman_runs', ascending=False).head(10)
-# for index, row in batsman.iterrows():
-#     runs.append({
-#         'runs': row['batsman_runs'],
-#         'batsman': row['batsman']
-#     })
+# need to run once in case backup file is not being used
+Matches.objects.all().delete()
+Matches.objects.from_csv(data_path+'matches.csv')
+Deliveries.objects.all().delete()
+Deliveries.objects.from_csv(data_path+'deliveries.csv')
 
 
 # serializer = MatchesSerializer(x, many=True)
